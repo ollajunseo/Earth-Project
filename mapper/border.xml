@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.earth.myproject.border.dao.IBorderDAO">
+
+<select id="getBorderList" resultType="com.earth.myproject.border.vo.BorderVO">
+	select 
+	        a.board_no
+	        ,a.board_title
+	        ,a.board_content
+	        ,a.board_date
+	        ,b.mem_email
+	        ,b.mem_nm
+	from board a, earth b
+	where a.mem_email = b.mem_email
+	order by 1 DESC    
+</select>
+<insert id="writeBoard" parameterType="com.earth.myproject.border.vo.BorderVO">
+	insert into board(
+						board_no
+						,board_title
+						,mem_email
+						,board_content
+						,board_date
+	) values (	
+						(select NVL(max(board_no),0) +1 from board)
+						,#{boardTitle}
+						,#{memEmail}
+						,#{boardContent}
+						,SYSDATE
+	)
+</insert>
+<select id="getBorder" resultType="com.earth.myproject.border.vo.BorderVO" parameterType="int">
+	SELECT
+			a.board_no
+			,a.board_title
+			,a.board_content
+			,a.mem_email
+			,b.mem_nm
+			,a.board_date
+	FROM board a, earth b
+	WHERE 
+	 		a.mem_email = b.mem_email
+	AND 	
+			a.board_no = #{boardNo}
+
+</select>
+<update id="updateBorder" parameterType="com.earth.myproject.border.vo.BorderVO">
+	UPDATE
+		board
+	SET
+		board_title=#{boardTitle}
+		,board_content = #{boardContent}
+	WHERE
+		board_no = #{boardNo}
+</update>
+</mapper>

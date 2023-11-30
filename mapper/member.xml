@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.earth.myproject.member.dao.ImemberDAO">
+<insert id="registMember" parameterType="com.earth.myproject.vo.memberVO">
+	INSERT INTO earth(
+						 mem_nm	
+						,mem_email
+						,mem_pw
+						)
+						VALUES(
+						#{memNm},
+						#{memEmail},
+						#{memPw}
+						)
+	
+</insert>
+<select id="loginMember" parameterType="memberVO" resultType="memberVO">
+SELECT   mem_nm
+		,mem_email
+		,mem_pw
+	FROM earth
+	WHERE mem_email =#{memEmail}
+	AND mem_pw =#{memPw}             
+</select>
+</mapper>
