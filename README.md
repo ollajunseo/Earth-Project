@@ -15,18 +15,9 @@
   - 댓글
   - 정보 페이지
   - 기온 변화 그래프
+  - 뉴스
+  - 게시글 수정
+  - 환경관련 동영상
 
-<div align="center"><h2>:closed_book: Language :closed_book: </h2></div>
- <div align="center">
-   <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white">
-   <img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white"> 
-   <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
-   
- </div> 
- <div align="center">
-   <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> 
-   <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> 
- </div>
 
- <div align="center"><h2>:closed_book: Framework & Tools :closed_book: </h2></div>
 
